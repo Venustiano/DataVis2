@@ -1,0 +1,49 @@
+"location","month","mean"
+"Death Valley","Jan",53.4516129032258
+"Death Valley","Feb",59.9448275862069
+"Death Valley","Mar",68.4483870967742
+"Death Valley","Apr",76.2933333333333
+"Death Valley","May",86.6064516129032
+"Death Valley","Jun",95.5466666666667
+"Death Valley","Jul",102.241935483871
+"Death Valley","Aug",100.193548387097
+"Death Valley","Sep",91.0533333333333
+"Death Valley","Oct",77.1483870967742
+"Death Valley","Nov",62.6033333333333
+"Death Valley","Dec",51.7483870967742
+"Houston","Jan",54.041935483871
+"Houston","Feb",57.3413793103448
+"Houston","Mar",63.3387096774194
+"Houston","Apr",69.8566666666667
+"Houston","May",77.0516129032258
+"Houston","Jun",81.9966666666667
+"Houston","Jul",83.7967741935484
+"Houston","Aug",84.1451612903226
+"Houston","Sep",80.06
+"Houston","Oct",72.1483870967742
+"Houston","Nov",63.15
+"Houston","Dec",55.5967741935484
+"San Diego","Jan",55.8451612903226
+"San Diego","Feb",56.5172413793103
+"San Diego","Mar",57.3516129032258
+"San Diego","Apr",59.8933333333333
+"San Diego","May",63.2
+"San Diego","Jun",66.5433333333333
+"San Diego","Jul",71.0483870967742
+"San Diego","Aug",72.6032258064516
+"San Diego","Sep",70.7466666666667
+"San Diego","Oct",65.9129032258064
+"San Diego","Nov",60.0033333333333
+"San Diego","Dec",55.2
+"Chicago","Jan",24.8483870967742
+"Chicago","Feb",28.9068965517241
+"Chicago","Mar",38.8483870967742
+"Chicago","Apr",50.45
+"Chicago","May",60.9
+"Chicago","Jun",71.0066666666667
+"Chicago","Jul",75.8451612903226
+"Chicago","Aug",74.1483870967742
+"Chicago","Sep",66.4033333333333
+"Chicago","Oct",54.2516129032258
+"Chicago","Nov",41.55
+"Chicago","Dec",29
