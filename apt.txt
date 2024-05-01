@@ -1,0 +1,14 @@
+libudunits2-dev
+libgdal-dev
+libgeos-dev
+libproj-dev
+libmagick++-dev
+libxt6
+libxtst6
+libprotobuf-dev
+protobuf-compiler
+cmake
+libpoppler-cpp-dev
+poppler-utils
+tk
+git
