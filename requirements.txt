@@ -1,8 +1,9 @@
-    RISE
-    plotly
-    rpy2
-    pandas
-    scipy
-    wordcloud
-    cufflinks
-    kaleido
+RISE
+plotly
+plotnine
+rpy2
+pandas
+scipy
+wordcloud
+cufflinks
+kaleido
