@@ -6,7 +6,6 @@ libmagick++-dev
 libxt6
 libxtst6
 libssl-dev
-libssl3
 libprotobuf-dev
 protobuf-compiler
 cmake
