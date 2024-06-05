@@ -11,5 +11,6 @@ protobuf-compiler
 cmake
 libpoppler-cpp-dev
 poppler-utils
+ghostscript
 tk
 git
