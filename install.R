@@ -44,5 +44,8 @@ tinytex::install_tinytex()
 tinytex:::install_yihui_pkgs()
 tinytex::tlmgr_install(c('psnfss', 'metafont', 'mfware', 'inconsolata', 'tex', 
                          'ae', 'parskip', 'listings', 'pgf', 'preview', 'grfext',
-                        'standalone', 'luatex85', 'pgfplots'))
+                        'standalone', 'luatex85', 'pgfplots', 'geometry', 'fancyhdr',
+                         'amsmath', 'amssymb', 'hyperref', 'graphicx', 'xcolor', 'enumerate',
+                         'enumitem', 'inputenc', 'fontenc', 'titling', 'babel', 'csquotes',
+                         'booktabs', 'longtable', 'tocbibind', 'float', 'caption'))
 tinytex::tlmgr_update() 
