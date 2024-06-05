@@ -46,6 +46,5 @@ tinytex::tlmgr_install(c('psnfss', 'metafont', 'mfware', 'inconsolata', 'tex',
                          'ae', 'parskip', 'listings', 'pgf', 'preview', 'grfext',
                         'standalone', 'luatex85', 'pgfplots', 'geometry', 'fancyhdr',
                          'amsmath', 'amssymb', 'hyperref', 'graphicx', 'xcolor', 'enumerate',
-                         'enumitem', 'inputenc', 'fontenc', 'titling', 'babel', 'csquotes',
-                         'booktabs', 'longtable'))
+                         'enumitem', 'inputenc', 'fontenc', 'titling', 'longtable'))
 tinytex::tlmgr_update() 
