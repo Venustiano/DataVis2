@@ -12,3 +12,9 @@ ipywidgets_jsonschema
 ipyfilechooser
 appdirs
 markdown
+jupyter-ai
+openai
+langchain-openai
+openai-chat
+python-dotenv
+groq
