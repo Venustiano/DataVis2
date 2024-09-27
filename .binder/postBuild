@@ -1,9 +1,0 @@
-#!/bin/bash
-
-set -ex
-# Download the .whl file from GitHub
-curl -L -o /tmp/rugllm_provider-0.1.0-py3-none-any.whl \
-    https://raw.githubusercontent.com/PASTAQ-MS/PASTAQ/venus/feature/ci/tools/rugllm_provider-0.1.0-py3-none-any.whl
-
-# Install the .whl file using pip
-pip install /tmp/rugllm_provider-0.1.0-py3-none-any.whl
