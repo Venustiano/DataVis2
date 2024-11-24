@@ -1,9 +1,0 @@
-#!/bin/bash
-
-set -ex
-
-git clone https://github.com/UG-Team-Data-Science/rugllmlab.git
-cd rugllmlab/rugllm_provider
-pip install .
-
-pip install codeium-jupyter
