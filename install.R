@@ -21,7 +21,7 @@ install.packages(c("nycflights13", "gapminder", "RColorBrewer",
                     "magrittr","R6", "generics","DBI","pillar","haven",
                     "foreign","withr","units","modelr","crayon",
                     "arrayhelpers", "progress","jpeg","rnaturalearth",
-                    "readxl","digest","classInt","tinytex", "xtable", "munsell",
+                    "readxl","digest","classInt", "xtable", "munsell",
                     "ggplot2movies", "base64enc","rmarkdown", 
                     "tikzDevice","scales","bookdown","remotes",
                     "FactoMineR","tidymodels","vcd"," lwgeom",
@@ -39,12 +39,3 @@ remotes::install_github('DavisVaughan/strapgod')
 remotes::install_github('ropensci/plotly')
 remotes::install_github('ropensci/jsonvalidate')
 remotes::install_github("thomasp85/transformr")
-
-tinytex::install_tinytex()
-tinytex:::install_yihui_pkgs()
-tinytex::tlmgr_install(c('psnfss', 'metafont', 'mfware', 'inconsolata', 'tex', 
-                         'ae', 'parskip', 'listings', 'pgf', 'preview', 'grfext', 'epstopdf',
-                        'standalone', 'luatex85', 'pgfplots', 'geometry', 'fancyhdr',
-                         'amsmath', 'amssymb', 'hyperref', 'graphicx', 'xcolor', 'enumerate',
-                         'enumitem', 'inputenc', 'fontenc', 'titling', 'longtable'))
-tinytex::tlmgr_update() 
