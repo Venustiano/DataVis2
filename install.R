@@ -40,11 +40,11 @@ remotes::install_github('ropensci/plotly')
 remotes::install_github('ropensci/jsonvalidate')
 remotes::install_github("thomasp85/transformr")
 
-tinytex::install_tinytex()
-tinytex:::install_yihui_pkgs()
-tinytex::tlmgr_install(c('psnfss', 'metafont', 'mfware', 'inconsolata', 'tex', 
-                         'ae', 'parskip', 'listings', 'pgf', 'preview', 'grfext', 'epstopdf',
-                        'standalone', 'luatex85', 'pgfplots', 'geometry', 'fancyhdr',
-                         'amsmath', 'amssymb', 'hyperref', 'graphicx', 'xcolor', 'enumerate',
-                         'enumitem', 'inputenc', 'fontenc', 'titling', 'longtable'))
-tinytex::tlmgr_update() 
+# tinytex::install_tinytex()
+# tinytex:::install_yihui_pkgs()
+# tinytex::tlmgr_install(c('psnfss', 'metafont', 'mfware', 'inconsolata', 'tex', 
+#                          'ae', 'parskip', 'listings', 'pgf', 'preview', 'grfext', 'epstopdf',
+#                         'standalone', 'luatex85', 'pgfplots', 'geometry', 'fancyhdr',
+#                          'amsmath', 'amssymb', 'hyperref', 'graphicx', 'xcolor', 'enumerate',
+#                          'enumitem', 'inputenc', 'fontenc', 'titling', 'longtable'))
+# tinytex::tlmgr_update() 
