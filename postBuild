@@ -8,22 +8,6 @@ pip install .
 
 pip install codeium-jupyter
 
-# Define custom installation directory
-TINYTEX_DIR="/opt/tinytex"
-
-# Install TinyTeX in the custom directory
-wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | env TINYTEX_INSTALLER_DIR="$TINYTEX_DIR" sh
-
-# Update PATH to include TinyTeX binaries
-echo "export PATH=$TINYTEX_DIR/bin:$PATH" >> /etc/profile
-echo "export PATH=$TINYTEX_DIR/bin:$PATH" >> /etc/bash.bashrc
-
-# Apply changes for the current session
-export PATH="$TINYTEX_DIR/bin:$PATH"
-
-# Ensure TinyTeX is working
-tlmgr path add
-
 # Install required LaTeX packages
 tlmgr install psnfss metafont mfware inconsolata tex ae parskip listings pgf preview \
     grfext epstopdf standalone luatex85 pgfplots geometry fancyhdr amsmath amssymb \
