@@ -23,3 +23,8 @@ export PATH="$TINYTEX_DIR/bin:$PATH"
 
 # Ensure TinyTeX is working
 tlmgr path add
+
+# Install required LaTeX packages
+tlmgr install psnfss metafont mfware inconsolata tex ae parskip listings pgf preview \
+    grfext epstopdf standalone luatex85 pgfplots geometry fancyhdr amsmath amssymb \
+    hyperref graphicx xcolor enumerate enumitem inputenc fontenc titling longtable
