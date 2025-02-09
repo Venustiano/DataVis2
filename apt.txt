@@ -14,3 +14,10 @@ poppler-utils
 ghostscript
 tk
 git
+texlive-latex-base
+texlive-latex-extra
+texlive-fonts-recommended
+texlive-xetex
+texlive-lang-all
+texlive-pictures
+texlive-science

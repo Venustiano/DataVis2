@@ -7,3 +7,4 @@ cd rugllmlab/rugllm_provider
 pip install .
 
 pip install codeium-jupyter
+

@@ -413,17 +413,21 @@ class dsp_app(object):
 
         if imgdevice == "tikz":
             imgdevice = "pdf"
-        if not fname.endswith("."+imgdevice):
+
+        if fname is None:
+            print("The result is in the folder of the dataset")
+            return
+        elif not fname.endswith("."+imgdevice):
             fname = fname + "." + imgdevice
             
-        if imgdevice in ["png","jpeg", "tiff","bmp"]:
-            display(dsp.Image(fname))
-        elif imgdevice == "svg":
-            display(SVG(fname))
-        elif imgdevice == "pdf":
-            display(IFrame(fname, width = save_params["width"]*30, height= save_params["height"]*30))
-        elif imgdevice == "html":
-            display(IFrame(fname, width = save_params["width"]*30, height= save_params["height"]*30))        
+            if imgdevice in ["png","jpeg", "tiff","bmp"]:
+                display(dsp.Image(fname))
+            elif imgdevice == "svg":
+                display(SVG(fname))
+            elif imgdevice == "pdf":
+                display(IFrame(fname, width = save_params["width"]*30, height= save_params["height"]*30))
+            elif imgdevice == "html":
+                display(IFrame(fname, width = save_params["width"]*30, height= save_params["height"]*30))        
     
     
     def on_click_Load(self, b):
@@ -610,6 +614,7 @@ class dsp_app(object):
             # if schema is None:
             #     print("Please select a schema")
             #     return
+            print(table)
             if table is None:
                 print("Please select a table")
                 return
