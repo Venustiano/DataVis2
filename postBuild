@@ -6,5 +6,7 @@ git clone https://github.com/UG-Team-Data-Science/rugllmlab.git
 cd rugllmlab/rugllm_provider
 pip install .
 
+pip install jupyterlab_bsshconn-0.1.0-py3-none-any.whl
+
 pip install codeium-jupyter
 
