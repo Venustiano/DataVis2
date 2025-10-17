@@ -3,7 +3,7 @@
 set -ex
 
 # Enable Copilot system-wide for RStudio Server
-echo "copilot-enabled=1" | sudo tee -a /etc/rstudio/rsession.conf
+echo "copilot-enabled=1" | tee -a /etc/rstudio/rsession.conf
 
 git clone https://github.com/UG-Team-Data-Science/rugllmlab.git
 cd rugllmlab/rugllm_provider
