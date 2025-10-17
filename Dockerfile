@@ -46,15 +46,14 @@ RUN echo "PATH: $PATH" && \
     which code-server || find / -type f -name code-server 2>/dev/null | head -20
 
 
-# COPY vscode-extensions.txt /tmp/vscode-extensions.txt
-# RUN xargs -n 1 /usr/bin/code-server --extensions-dir ${CODE_EXTENSIONSDIR}  --install-extension < /tmp/vscode-extensions.txt
-
 RUN curl -L \
   "https://drive.usercontent.google.com/download?id=12y4nqRhPMNso3q_xnxdtO_r--uFnwOYZ&confirm=xxx" \
   -o /tmp/GitHub.copilot-1.370.1783.vsix && \
   /usr/bin/code-server --install-extension /tmp/GitHub.copilot-1.370.1783.vsix && \
   rm /tmp/GitHub.copilot-1.370.1783.vsix
 
+COPY vscode-extensions.txt /tmp/vscode-extensions.txt
+RUN xargs -n 1 /usr/bin/code-server --extensions-dir ${CODE_EXTENSIONSDIR}  --install-extension < /tmp/vscode-extensions.txt
 
 # Install from the requirements.txt file
 COPY requirements.txt install.R /tmp/
