@@ -1,0 +1,2 @@
+ms-python.python
+github.copilot-chat
