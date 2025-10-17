@@ -18,3 +18,4 @@ langchain-openai
 openai-chat
 python-dotenv
 groq
+notebook-intelligence
