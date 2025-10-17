@@ -35,6 +35,8 @@ RUN echo "copilot-enabled=1" >> /etc/rstudio/rsession.conf
     
 RUN chown -R ${NB_USER}:${NB_USER} /opt/venv
 
+RUN adduser "$NB_USER" sudo && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers
+
 USER ${NB_USER}
 
 COPY vscode-extensions.txt /tmp/vscode-extensions.txt
