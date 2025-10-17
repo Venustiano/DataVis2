@@ -1,3 +1,5 @@
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+
 install.packages(c("nycflights13", "gapminder", "RColorBrewer",
                     "gganimate","emmeans","mgcv","nlme","broom",
                     "tidybayes","maps","statebins","sf","maptools",
