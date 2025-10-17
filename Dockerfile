@@ -33,19 +33,19 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN echo "copilot-enabled=1" >> /etc/rstudio/rsession.conf
     
-RUN chown -R ${NB_USER}:${NB_USER} /opt/venv
+# RUN chown -R ${NB_USER}:${NB_USER} /opt/venv
 
 RUN adduser "$NB_USER" sudo && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers
 
 USER ${NB_USER}
 
 COPY vscode-extensions.txt /tmp/vscode-extensions.txt
-RUN xargs -n 1 code-server --extensions-dir ${CODE_EXTENSIONSDIR}  --install-extension < /tmp/vscode-extensions.txt
+RUN xargs -n 1 /usr/local/bin/code-server --extensions-dir ${CODE_EXTENSIONSDIR}  --install-extension < /tmp/vscode-extensions.txt
 
 RUN curl -L \
   "https://drive.usercontent.google.com/download?id=12y4nqRhPMNso3q_xnxdtO_r--uFnwOYZ&confirm=xxx" \
   -o /tmp/GitHub.copilot-1.370.1783.vsix && \
-  code-server --install-extension /tmp/GitHub.copilot-1.370.1783.vsix && \
+  /usr/local/bin/code-server --install-extension /tmp/GitHub.copilot-1.370.1783.vsix && \
   rm /tmp/GitHub.copilot-1.370.1783.vsix
 
 
