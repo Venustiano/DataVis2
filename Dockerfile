@@ -50,7 +50,6 @@ RUN curl -L \
   "https://drive.usercontent.google.com/download?id=12y4nqRhPMNso3q_xnxdtO_r--uFnwOYZ&confirm=xxx" \
   -o /tmp/GitHub.copilot-1.370.1783.vsix && \
   /usr/bin/code-server --install-extension /tmp/GitHub.copilot-1.370.1783.vsix && \
-  /usr/bin/code-server --install-extension github.copilot-chat && \
   rm /tmp/GitHub.copilot-1.370.1783.vsix
 
 # COPY vscode-extensions.txt /tmp/vscode-extensions.txt
