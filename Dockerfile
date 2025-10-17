@@ -1,4 +1,4 @@
-FROM rocker/binder:4.3.1
+FROM rocker/binder:4.4.2
 
 # Switch to root for installing system dependencies
 USER root
@@ -27,6 +27,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN tlmgr install preview standalone luatex85 pgfplots fancyhdr
+
+RUN echo "copilot-enabled=1" >> /etc/rstudio/rsession.conf
     
 RUN chown -R ${NB_USER}:${NB_USER} /opt/venv
 
