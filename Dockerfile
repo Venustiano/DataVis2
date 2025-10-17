@@ -26,11 +26,24 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     zlib1g-dev && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN tlmgr install preview standalone luatex85 pgfplots fancyhdr
+# RUN tlmgr install preview standalone luatex85 pgfplots fancyhdr
+RUN tlmgr option repository https://mirror.ctan.org/systems/texlive/tlnet/2024 && \
+    tlmgr install preview standalone luatex85 pgfplots fancyhdr
 
 RUN echo "copilot-enabled=1" >> /etc/rstudio/rsession.conf
     
 RUN chown -R ${NB_USER}:${NB_USER} /opt/venv
+
+USER ${NB_USER}
+
+COPY vscode-extensions.txt /tmp/vscode-extensions.txt
+RUN xargs -n 1 code-server --extensions-dir ${CODE_EXTENSIONSDIR}  --install-extension < /tmp/vscode-extensions.txt
+
+RUN curl -L \
+  "https://drive.usercontent.google.com/download?id=12y4nqRhPMNso3q_xnxdtO_r--uFnwOYZ&confirm=xxx" \
+  -o /tmp/GitHub.copilot-1.370.1783.vsix && \
+  code-server --install-extension /tmp/GitHub.copilot-1.370.1783.vsix && \
+  rm /tmp/GitHub.copilot-1.370.1783.vsix
 
 
 # Install from the requirements.txt file
@@ -40,4 +53,3 @@ RUN pip install --no-cache-dir --requirement /tmp/requirements.txt
 RUN Rscript /tmp/install.R
 
 
-USER ${NB_USER}
