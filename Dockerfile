@@ -46,8 +46,8 @@ RUN echo "PATH: $PATH" && \
     which code-server || find / -type f -name code-server 2>/dev/null | head -20
 
 
-COPY vscode-extensions.txt /tmp/vscode-extensions.txt
-RUN xargs -n 1 /usr/bin/code-server --extensions-dir ${CODE_EXTENSIONSDIR}  --install-extension < /tmp/vscode-extensions.txt
+# COPY vscode-extensions.txt /tmp/vscode-extensions.txt
+# RUN xargs -n 1 /usr/bin/code-server --extensions-dir ${CODE_EXTENSIONSDIR}  --install-extension < /tmp/vscode-extensions.txt
 
 RUN curl -L \
   "https://drive.usercontent.google.com/download?id=12y4nqRhPMNso3q_xnxdtO_r--uFnwOYZ&confirm=xxx" \
