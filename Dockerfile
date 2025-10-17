@@ -27,8 +27,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # RUN tlmgr install preview standalone luatex85 pgfplots fancyhdr
-RUN apt-get update && apt-get install -y --no-install-recommends gnupg && \
-    tlmgr option repository http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2024/tlnet-final && \
+RUN tlmgr option repository http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2024/tlnet-final && \
+    tlmgr option verify_downloads 0 && \
     tlmgr install preview standalone luatex85 pgfplots fancyhdr
 
 RUN echo "copilot-enabled=1" >> /etc/rstudio/rsession.conf
