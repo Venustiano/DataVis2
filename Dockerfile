@@ -1,4 +1,4 @@
-FROM rocker/binder:4.4.2
+FROM rocker/binder:no-xdg-set
 
 # Switch to root for installing system dependencies
 USER root
