@@ -71,8 +71,10 @@ COPY requirements.txt install.R /tmp/
 RUN pip install --no-cache-dir --requirement /tmp/requirements.txt
 # Install R packages
 RUN Rscript /tmp/install.R
-
+USER root
 COPY ./material/ /home/jovyan/work
 RUN chown -R ${NB_USER}:users /home/jovyan/work
+USER ${NB_USER}
+
 
 
