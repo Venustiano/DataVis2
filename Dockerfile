@@ -1,4 +1,4 @@
-FROM rocker/binder:latest
+FROM rocker/binder:c92971921423
 # this env var is recognized by jupyter-vscode-proxy:
 # ENV CODE_EXTENSIONSDIR=/opt/share/code-server
 
