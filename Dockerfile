@@ -73,7 +73,6 @@ RUN pip install --no-cache-dir --requirement /tmp/requirements.txt
 RUN Rscript /tmp/install.R
 
 COPY ./material/ /home/jovyan/work
-RUN chown -R ${NB_USER}:${NB_USER} /home/jovyan/work
-
+RUN chown -R ${NB_USER}:users /home/jovyan/work
 
 
