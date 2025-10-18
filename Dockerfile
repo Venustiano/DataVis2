@@ -52,8 +52,8 @@ RUN curl -L \
   /usr/bin/code-server --install-extension /tmp/GitHub.copilot-1.370.1783.vsix && \
   rm /tmp/GitHub.copilot-1.370.1783.vsix
 
-# COPY vscode-extensions.txt /tmp/vscode-extensions.txt
-# RUN xargs -n 1 /usr/bin/code-server --extensions-dir ${CODE_EXTENSIONSDIR}  --install-extension < /tmp/vscode-extensions.txt
+COPY vscode-extensions.txt /tmp/vscode-extensions.txt
+RUN xargs -n 1 /usr/bin/code-server --extensions-dir ${CODE_EXTENSIONSDIR}  --install-extension < /tmp/vscode-extensions.txt
 
 # Install from the requirements.txt file
 COPY requirements.txt install.R /tmp/
