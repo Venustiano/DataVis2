@@ -61,7 +61,7 @@ RUN pip install --no-cache-dir --requirement /tmp/requirements.txt
 # Install R packages
 RUN Rscript /tmp/install.R
 
-COPY .material/ /home/jovyan/work
+COPY ./material/ /home/jovyan/work
 
 
 
