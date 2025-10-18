@@ -1,6 +1,6 @@
 FROM rocker/binder:latest
 # this env var is recognized by jupyter-vscode-proxy:
-ENV CODE_EXTENSIONSDIR=/opt/share/code-server
+# ENV CODE_EXTENSIONSDIR=/opt/share/code-server
 
 # Switch to root for installing system dependencies
 USER root
