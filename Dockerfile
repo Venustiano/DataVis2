@@ -4,6 +4,11 @@ FROM rocker/binder:latest
 
 # Switch to root for installing system dependencies
 USER root
+
+RUN curl -fsSL https://code-server.dev/install.sh | sh && rm -rf .cache \
+ && rm -f /usr/local/bin/code-server \
+ && ln -s /usr/bin/code-server /usr/local/bin/code-server
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libudunits2-dev \
     libpoppler-cpp-dev \
