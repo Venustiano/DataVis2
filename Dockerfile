@@ -49,16 +49,19 @@ RUN echo "PATH: $PATH" && \
 RUN curl -L \
   "https://drive.usercontent.google.com/download?id=12y4nqRhPMNso3q_xnxdtO_r--uFnwOYZ&confirm=xxx" \
   -o /tmp/GitHub.copilot-1.370.1783.vsix && \
-  /usr/bin/code-server --install-extension /tmp/GitHub.copilot-1.370.1783.vsix && \
+  code-server --install-extension /tmp/GitHub.copilot-1.370.1783.vsix && \
   rm /tmp/GitHub.copilot-1.370.1783.vsix
 
 COPY vscode-extensions.txt /tmp/vscode-extensions.txt
-RUN xargs -n 1 /usr/bin/code-server --extensions-dir ${CODE_EXTENSIONSDIR}  --install-extension < /tmp/vscode-extensions.txt
+RUN xargs -n 1 code-server --extensions-dir ${CODE_EXTENSIONSDIR}  --install-extension < /tmp/vscode-extensions.txt
 
 # Install from the requirements.txt file
 COPY requirements.txt install.R /tmp/
 RUN pip install --no-cache-dir --requirement /tmp/requirements.txt
 # Install R packages
 RUN Rscript /tmp/install.R
+
+COPY .material/ /home/jovyan/work
+
 
 
