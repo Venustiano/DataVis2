@@ -1,1 +1,1 @@
-github.copilot-chat
+GitHub.copilot-chat
