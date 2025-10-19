@@ -56,12 +56,14 @@ RUN echo "PATH: $PATH" && \
 #   code-server --install-extension /tmp/GitHub.copilot-1.370.1783.vsix && \
 #   rm /tmp/GitHub.copilot-1.370.1783.vsix
 
+# "https://drive.usercontent.google.com/download?id=12y4nqRhPMNso3q_xnxdtO_r--uFnwOYZ&confirm=xxx" \
+
 COPY vscode-extensions.txt /tmp/vscode-extensions.txt
 RUN curl -L \
-    "https://drive.usercontent.google.com/download?id=12y4nqRhPMNso3q_xnxdtO_r--uFnwOYZ&confirm=xxx" \
-    -o /tmp/GitHub.copilot-1.370.1783.vsix && \
-    code-server --install-extension /tmp/GitHub.copilot-1.370.1783.vsix && \
-    rm /tmp/GitHub.copilot-1.370.1783.vsix && \
+    "https://drive.usercontent.google.com/download?id=1c06KD0Gt-0FdvNavqD_u_Dxe9gXOck_k&confirm=xxx" \
+    -o /tmp/GitHub.copilot-latest.vsix && \
+    code-server --install-extension /tmp/GitHub.copilot-latest.vsix && \
+    rm /tmp/GitHub.copilot-latest.vsix && \
     xargs -n 1 code-server --extensions-dir ${CODE_EXTENSIONSDIR} --install-extension < /tmp/vscode-extensions.txt
 
 # RUN xargs -n 1 code-server --extensions-dir ${CODE_EXTENSIONSDIR}  --install-extension < /tmp/vscode-extensions.txt
