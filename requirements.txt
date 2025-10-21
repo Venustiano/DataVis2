@@ -1,4 +1,6 @@
 RISE
+seaborn
+altair
 plotly
 plotnine
 rpy2
