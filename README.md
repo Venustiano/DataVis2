@@ -17,4 +17,4 @@ Rocker Binder
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Venustiano/DataVis2/rockerbinder)
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Venustiano/DataVis2/master?urlpath=git-pull%3Frepo%3Dhttps%3A%2F%2Fgithub.com%2FVenustiano%2FDataVisMaterial)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Venustiano/DataVis2/rockerbinder?urlpath=git-pull%3Frepo%3Dhttps%3A%2F%2Fgithub.com%2FVenustiano%2FDataVisMaterial)
