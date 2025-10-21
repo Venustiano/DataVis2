@@ -71,7 +71,7 @@ RUN curl -L \
 # Install from the requirements.txt file
 COPY requirements.txt install.R /tmp/
 RUN pip install --no-cache-dir --requirement /tmp/requirements.txt \
- && jupyter serverextension enable --py nbgitpuller --sys-prefix
+ && jupyter server extension enable --py nbgitpuller --sys-prefix
 # Install R packages
 RUN Rscript /tmp/install.R
 USER root
