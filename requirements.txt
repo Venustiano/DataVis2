@@ -21,3 +21,4 @@ openai-chat
 python-dotenv
 groq
 notebook-intelligence
+nbgitpuller
