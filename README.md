@@ -1,9 +1,9 @@
 # Practical Data Visualization
 ### Binder environments
 
-[![launch rug binder](https://img.shields.io/badge/launch%20-rug%20binder-009CEF?logo=jupyter)](https://binderhub.app.rug.nl/v2/gh/Venustiano/DataVis2/HEAD)
+[![launch rug binder](https://img.shields.io/badge/launch%20-rug%20binder-009CEF?logo=jupyter)](https://binderhub.app.rug.nl/v2/gh/Venustiano/DataVis2/HEAD?urlpath=git-pull%3Frepo%3Dhttps%3A%2F%2Fgithub.com%2FVenustiano%2FDataVisMaterial)
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Venustiano/DataVis2/HEAD?urlpath=lab)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Venustiano/DataVis2/HEAD?urlpath=git-pull%3Frepo%3Dhttps%3A%2F%2Fgithub.com%2FVenustiano%2FDataVisMaterial)
 
 ---
 Testing environments
@@ -15,4 +15,4 @@ Testing environments
 ---
 Rocker Binder
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Venustiano/DataVis2/rockerbinder)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Venustiano/DataVis2/rockerbinder?urlpath=git-pull%3Frepo%3Dhttps%3A%2F%2Fgithub.com%2FVenustiano%2FDataVisMaterial)

@@ -5,9 +5,10 @@ FROM rocker/binder:latest
 # Switch to root for installing system dependencies
 USER root
 
-RUN curl -fsSL https://code-server.dev/install.sh | sh && rm -rf .cache \
+RUN curl -fsSL https://code-server.dev/install.sh | VERSION=4.105.1 sh && rm -rf .cache \
  && rm -f /usr/local/bin/code-server \
  && ln -s /usr/bin/code-server /usr/local/bin/code-server
+
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libudunits2-dev \
@@ -50,33 +51,28 @@ RUN echo "PATH: $PATH" && \
     which code-server || find / -type f -name code-server 2>/dev/null | head -20
 
 
-# RUN curl -L \
-#   "https://drive.usercontent.google.com/download?id=12y4nqRhPMNso3q_xnxdtO_r--uFnwOYZ&confirm=xxx" \
-#   -o /tmp/GitHub.copilot-1.370.1783.vsix && \
-#   code-server --install-extension /tmp/GitHub.copilot-1.370.1783.vsix && \
-#   rm /tmp/GitHub.copilot-1.370.1783.vsix
-
-# "https://drive.usercontent.google.com/download?id=12y4nqRhPMNso3q_xnxdtO_r--uFnwOYZ&confirm=xxx" \
-
-COPY vscode-extensions.txt /tmp/vscode-extensions.txt
+COPY requirements.txt install.R vscode-extensions.txt /tmp/
 RUN curl -L \
     "https://drive.usercontent.google.com/download?id=1c06KD0Gt-0FdvNavqD_u_Dxe9gXOck_k&confirm=xxx" \
     -o /tmp/GitHub.copilot-latest.vsix && \
     code-server --install-extension /tmp/GitHub.copilot-latest.vsix && \
     rm /tmp/GitHub.copilot-latest.vsix && \
-    xargs -n 1 code-server --extensions-dir ${CODE_EXTENSIONSDIR} --install-extension < /tmp/vscode-extensions.txt
+    curl -L \
+    "https://drive.usercontent.google.com/download?id=1OIS6tAf0ehmerHTAOPFH_4pF_JQ3GO8s&confirm=xxx" \
+    -o /tmp/GitHub.copilot-chat-latest.vsix && \
+    code-server --install-extension /tmp/GitHub.copilot-chat-latest.vsix && \
+    rm /tmp/GitHub.copilot-chat-latest.vsix
 
-# RUN xargs -n 1 code-server --extensions-dir ${CODE_EXTENSIONSDIR}  --install-extension < /tmp/vscode-extensions.txt
+#    xargs -n 1 code-server --extensions-dir ${CODE_EXTENSIONSDIR} --install-extension < /tmp/vscode-extensions.txt
 
 # Install from the requirements.txt file
-COPY requirements.txt install.R /tmp/
-RUN pip install --no-cache-dir --requirement /tmp/requirements.txt
-# Install R packages
-RUN Rscript /tmp/install.R
+RUN ls -l /tmp && cat /tmp/requirements.txt && \
+    pip install --no-cache-dir --requirement /tmp/requirements.txt && \
+    jupyter server extension enable --py nbgitpuller --sys-prefix && \
+    Rscript /tmp/install.R
+
 USER root
 COPY ./material/ /home/jovyan/work
 RUN chown -R ${NB_USER}:users /home/jovyan/work
 USER ${NB_USER}
-
-
 
