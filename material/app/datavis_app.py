@@ -23,6 +23,17 @@ import markdown
 from rpy2.robjects.packages import importr
 from rpy2.ipython.ggplot import image_png
 
+from rpy2.robjects import conversion
+from rpy2.robjects import default_converter
+import rpy2.robjects.numpy2ri as numpy2ri
+import rpy2.robjects.pandas2ri as pandas2ri
+
+# Compose a converter
+my_converter = conversion.Converter('my converter')
+my_converter += default_converter
+my_converter += numpy2ri.converter
+my_converter += pandas2ri.converter
+
 class dsp_app(object):
     def __init__(self):
         self.rugplot = importr('rugplot')
@@ -339,10 +350,18 @@ class dsp_app(object):
                 with self.output_form:
                     self.output_form.clear_output()
                     self.jsform.show(width="600px")
+
+
+
+# def on_technique_change(self, change):
+#     with conversion.localconverter(my_converter):
+#         raw_schema = self.rugplot.rug_jsonschema(change['new'])
+#     self.fschema = json.loads(''.join(raw_schema))                    
         
     def on_technique_change(self, change):
 
-        raw_schema = self.rugplot.rug_jsonschema(change['new'])
+        with conversion.localconverter(my_converter):
+            raw_schema = self.rugplot.rug_jsonschema(change['new'])
         self.fschema = json.loads(''.join(raw_schema))
     
         if self.filechooser.selected != None:
@@ -666,18 +685,19 @@ class dsp_app(object):
     
         with self.output_results:
             self.output_results.clear_output()
-            lp = self.jl.fromJSON(js)
-            p = self.rugplot.create_rugplot(lp,plot)
+            with conversion.localconverter(my_converter):
+                lp = self.jl.fromJSON(js)
+                p = self.rugplot.create_rugplot(lp,plot)
             
-            if save["save"]:
-                # TODO: redesign the save function
-                #       the fileoutput predefined in the front end, not back end
-                self.output_results.clear_output()
-                print("Output file: {}".format(save["outputfilename"]))
-                self.display_result(save)
-                print("For a better representation, open the file using the browser on the left")
-            else:
-                display(image_png(p))
+                if save["save"]:
+                    # TODO: redesign the save function
+                    #       the fileoutput predefined in the front end, not back end
+                    self.output_results.clear_output()
+                    print("Output file: {}".format(save["outputfilename"]))
+                    self.display_result(save)
+                    print("For a better representation, open the file using the browser on the left")
+                else:
+                    display(image_png(p))
             # print(dir(p))
             # print(p)
         
