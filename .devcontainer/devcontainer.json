@@ -1,6 +1,6 @@
 {
   "name": "datavizclaus",
-  "image": "venustiano/fdvcw:27-12-25",
+  "image": "venustiano/dvenv:v1.9.2",
   "workspaceFolder": "/home/jovyan/work",
   "workspaceMount": "source=${localWorkspaceFolder},target=/home/jovyan/work,type=bind,consistency=cached",
   "remoteUser": "jovyan",
