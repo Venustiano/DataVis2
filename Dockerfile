@@ -2,10 +2,14 @@ FROM rocker/binder:latest
 # this env var is recognized by jupyter-vscode-proxy:
 # ENV CODE_EXTENSIONSDIR=/opt/share/code-server
 
+# Provide the VS Code Marketplace gallery endpoint (EXTENSIONS_GALLERY)
+ENV EXTENSIONS_GALLERY='{"serviceUrl":"https://marketplace.visualstudio.com/_apis/public/gallery","itemUrl":"https://marketplace.visualstudio.com/items"}'
+
+
 # Switch to root for installing system dependencies
 USER root
 
-RUN curl -fsSL https://code-server.dev/install.sh | VERSION=4.105.1 sh && rm -rf .cache \
+RUN curl -fsSL https://code-server.dev/install.sh | sh && rm -rf .cache \
  && rm -f /usr/local/bin/code-server \
  && ln -s /usr/bin/code-server /usr/local/bin/code-server
 
@@ -52,18 +56,7 @@ RUN echo "PATH: $PATH" && \
 
 
 COPY requirements.txt install.R vscode-extensions.txt /tmp/
-RUN curl -L \
-    "https://drive.usercontent.google.com/download?id=1c06KD0Gt-0FdvNavqD_u_Dxe9gXOck_k&confirm=xxx" \
-    -o /tmp/GitHub.copilot-latest.vsix && \
-    code-server --install-extension /tmp/GitHub.copilot-latest.vsix && \
-    rm /tmp/GitHub.copilot-latest.vsix && \
-    curl -L \
-    "https://drive.usercontent.google.com/download?id=1OIS6tAf0ehmerHTAOPFH_4pF_JQ3GO8s&confirm=xxx" \
-    -o /tmp/GitHub.copilot-chat-latest.vsix && \
-    code-server --install-extension /tmp/GitHub.copilot-chat-latest.vsix && \
-    rm /tmp/GitHub.copilot-chat-latest.vsix
-
-#    xargs -n 1 code-server --extensions-dir ${CODE_EXTENSIONSDIR} --install-extension < /tmp/vscode-extensions.txt
+RUN xargs -n 1 code-server --extensions-dir ${CODE_EXTENSIONSDIR} --install-extension < /tmp/vscode-extensions.txt
 
 # Install from the requirements.txt file
 RUN ls -l /tmp && cat /tmp/requirements.txt && \
