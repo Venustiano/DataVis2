@@ -229,10 +229,15 @@ class dsp_app(object):
         self.tab = widgets.Tab()
         self.tab.children = tabChildren
         self.tab.titles = ["Parameters", "Results"]
-        self.tab.selected_index = 1    
-        with self.output_results:
-            display(IFrame(src= 'https://docker-cds.readthedocs.io/en/latest/reusable_techniques.html',
-                           width=700, height=600))
+        self.tab.selected_index = 1   
+
+        self.output_results.append_display_data(
+            IFrame(
+                src='https://docker-cds.readthedocs.io/en/latest/reusable_techniques.html',
+                width=700,
+                height=600
+            )
+        )
 
         self.disp_buttons = widgets.HBox(children =[self.button_display_types, self.button_display_header])
         self.hr_buttons = widgets.HBox(children =[self.button_help, self.button_run_technique])
@@ -723,10 +728,12 @@ class dsp_app(object):
         self.button_Load.on_click(self.on_click_Load)
         
     def run_app(self):
-        app = widgets.AppLayout(header = self.header,
-                 left_sidebar = self.lsidebar,
-                 center = self.tab,
-                 footer = None,
-                 height='700px'
-                 )
+        app = widgets.AppLayout(
+            header=self.header,
+            left_sidebar=self.lsidebar,
+            center=self.tab,
+            footer=None,
+            height='700px'
+        )
+
         display(app)

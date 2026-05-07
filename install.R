@@ -28,7 +28,9 @@ install.packages(c("nycflights13",  "gapminder", "RColorBrewer",
                     "tikzDevice","scales","bookdown","remotes",
                     "FactoMineR","tidymodels","vcd"," lwgeom",
                     "gridGraphics","caret", "repr", "GGally",
-                    "IRdisplay", "pdbZMQ", "argparse", "reticulate", "gt"))
+                    "IRdisplay", "pdbZMQ", "argparse", "gt"))
+
+install.packages(c("timechange", "lubridate"), dependencies = TRUE)
 
 remotes::install_github("rijksuniversiteit-groningen/cds-utils",subdir="rugutils")
 remotes::install_github("rijksuniversiteit-groningen/rugplot@venus/feature/schemarefs")
