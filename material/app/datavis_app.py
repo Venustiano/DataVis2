@@ -75,12 +75,6 @@ class dsp_app(object):
         # self.sqlite_uri=URL.create(**self.sqlitedb)
                     
         # ipywidgets
-
-    def show_iframe(self, url, width=700, height=600):  
-        self.output_results.clear_output()  
-        self.tab.selected_index = 1  
-        with self.output_results:  
-            display(IFrame(src=url, width=width, height=height))  
         
     def declare_widgets(self):
         self.output_form = widgets.Output()
